@@ -6,10 +6,16 @@ const student = {
   isMale: "Boy",
   email: "john0@gmail.com",
   address: "90 Bedford St, Manhattan",
+  outputAdress() {
+    return this.address;
+  },
+  changeIsMale(otherIsMale) {
+    this.isMale = otherIsMale;
+  },
 };
 
-console.log(student.address);
-student.isMale = "Girl";
+console.log(student.outputAdress());
+student.changeIsMale("Girl");
 
 console.groupEnd();
 
@@ -21,10 +27,15 @@ const department = {
   link: "https://apps.ucu.edu.ua/",
   trainingProgram: "Компьютерные науки",
   email: "mscs@ucu.edu.ua",
+  getFaculty(newTitle) {
+    this.titleFaculty = newTitle;
+  },
 };
 
-const getFaculty = "titleFaculty";
-department[getFaculty] = "Faculty of Applied Sciences";
+department.getFaculty("Faculty of Applied Sciences");
+
+// const getFaculty = "titleFaculty";
+// department[getFaculty] = "Faculty of Applied Sciences";
 
 console.groupEnd();
 
@@ -39,7 +50,7 @@ function Books(author, title, yearOfPublishing, publishingHouse) {
 
 const booksProto = {};
 
-booksProto.yearsOld = function () {
+booksProto.calcBookAge = function () {
   return (this.yearOfPublishing = 2022 - this.yearOfPublishing);
 };
 
@@ -51,5 +62,7 @@ const book1 = new Books(
   1843,
   "Chapman & Hall"
 );
+
+console.log(book1.calcBookAge());
 
 console.groupEnd();
