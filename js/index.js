@@ -51,7 +51,7 @@ function Books(author, title, yearOfPublishing, publishingHouse) {
 const booksProto = {};
 
 booksProto.calcBookAge = function () {
-  return (this.yearOfPublishing = 2022 - this.yearOfPublishing);
+  return 2022 - this.yearOfPublishing;
 };
 
 Books.prototype = booksProto;
